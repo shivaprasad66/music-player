@@ -3,12 +3,16 @@ const title = document.getElementById('title');
 const artist = document.getElementById('artist');
 const music = document.querySelector('audio');
 const progressContainer = document.getElementById('progress-container');
+const myAudio = document.getElementById("myAudio");
 const currentTimeEl= document.getElementById('current-time');
 const durationEl = document.getElementById('duration');
 const progress = document.getElementById('progress');
 const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
+const loopBtn = document.getElementById('loop');
+let isLooping = false; // loop OFF by default
+
 
 
 
@@ -119,6 +123,9 @@ function nextSong(){
     playSong();
 }
 
+
+
+
 //on load - select first song 
 loadSong(songs[3]);
 
@@ -187,6 +194,17 @@ music.addEventListener('ended',nextSong);
 music.addEventListener('timeupdate',updateProgressBar);
 progressContainer.addEventListener('click',setProgressBar);
 
+loopBtn.addEventListener('click', () => {
+    isLooping = !isLooping;      // toggle loop state
+    music.loop = isLooping;      // apply loop to audio element
 
+    if (isLooping) {
+        loopBtn.style.color = "green"; // highlight active state
+        loopBtn.setAttribute('title', 'Loop On');
+    } else {
+        loopBtn.style.color = "rgb(129,129,129)"; // reset color
+        loopBtn.setAttribute('title', 'Loop Off');
+    }
+});
 
 
