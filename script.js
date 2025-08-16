@@ -35,6 +35,22 @@ const songs= [
         displayName: 'Front Row (Remix)',
         artist: 'Metric/Jacinto Design ',
     },
+    {
+        name: 'star',
+        displayName:'starBoy',
+        artist:'weekend',
+    },
+    {
+        name:'f1',
+        displayName:'loosingmymind',
+        artist:'pit',
+
+    },
+    {
+        name:'ed',
+        displayName:'naina-shapeofyou',
+        artist:'ed-diljit'
+    },
 ];
 
 // check if playing 
