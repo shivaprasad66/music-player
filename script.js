@@ -3,7 +3,7 @@ const title = document.getElementById('title');
 const artist = document.getElementById('artist');
 const music = document.querySelector('audio');
 const progressContainer = document.getElementById('progress-container');
-const myAudio = document.getElementById("myAudio");
+
 const currentTimeEl= document.getElementById('current-time');
 const durationEl = document.getElementById('duration');
 const progress = document.getElementById('progress');
@@ -91,7 +91,7 @@ playBtn.addEventListener('click', () => (isPlaying ? pauseSong () : playSong()))
 // update dom
 function loadSong(song){
     title.textContent = song.displayName;
-    artist.textContent = song.displayName;
+    artist.textContent = song.artist;
     music.src = `music/${song.name}.mp3`;
     image.src = `img/${song.name}.jpg`;
 }
