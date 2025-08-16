@@ -12,6 +12,7 @@ const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
 const loopBtn = document.getElementById('loop');
 let isLooping = false; // loop OFF by default
+const downloadBtn= document.getElementById('download');
 
 
 
@@ -194,6 +195,10 @@ music.addEventListener('ended',nextSong);
 music.addEventListener('timeupdate',updateProgressBar);
 progressContainer.addEventListener('click',setProgressBar);
 
+
+
+// looping function
+
 loopBtn.addEventListener('click', () => {
     isLooping = !isLooping;      // toggle loop state
     music.loop = isLooping;      // apply loop to audio element
@@ -206,5 +211,17 @@ loopBtn.addEventListener('click', () => {
         loopBtn.setAttribute('title', 'Loop Off');
     }
 });
+
+//  downloading function
+downloadBtn.addEventListener('click',()=>{
+    const currentSong=songs[songIndex];
+    const link=document.createElement('a');
+    link.href=`music/${currentSong.name}.mp3`;
+    link.download=`${currentSong.download}.mp3`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+})
+
 
 
