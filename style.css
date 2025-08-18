@@ -97,7 +97,7 @@ h3 {
 .player-controls {
   position: relative;
   top: -15px;
-  left: 120px;
+  left: 75px;
   width: 240px;
   display: flex;
   justify-content: space-between;
